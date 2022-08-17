@@ -1,0 +1,170 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    font-family: "Roboto";
+}
+
+.greeting {
+    background-color: #1f2937;
+    padding-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: white;
+}
+
+.header a {
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.header ul {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30vh;
+    padding-right: 30vh;
+    padding-bottom: 5vh;
+}
+
+.header ul {
+    display: flex;
+    gap: 25px;
+}
+
+.greeting .content {
+    display: flex;
+    padding-left: 30vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.greeting .content .introduction h1 {
+    color: white;
+    max-width: 400px;
+}
+
+.greeting .content .introduction p {
+    color: #e5e7eb;
+    max-width: 400px;
+}
+
+.greeting .content .introduction button {
+    background-color: #3882f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 5px;
+}
+
+.greeting .content img {
+    width: 450px;
+    height: auto;
+    padding-right: 30vh;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.information .cards {
+    display: flex;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+.information h1 {
+    font-size: 24px;
+}
+
+.information .cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 200px;
+    text-align: center;
+}
+
+.information .cards .card img {
+    width: 200px;
+    height: auto;
+    border: 3px solid silver;
+    border-radius: 4px;
+}
+
+.quoteSection {
+    background-color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.quoteSection .quote {
+    max-width: 550px;
+}
+
+.quoteSection .quote p {
+    font-size: 36px;
+    font-style: italic;
+    color: #1f2937;
+    margin-bottom: 0px;
+    font-weight: lighter;
+}
+
+.quoteSection .quote h2 {
+    margin-top: 5px;
+    text-align: end;
+}
+
+.callToAction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    padding: 50px;
+}
+
+.callToAction .signUpBanner {
+    display: flex;
+    justify-content: space-around;
+    background-color: #3882f6;
+    align-items: center;
+    width: 800px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.callToAction .signUpBanner .text h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.callToAction .signUpBanner .text p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.callToAction .signUpBanner .signUpButton button {
+    background-color: #3882f6;
+    border: 1px solid white;
+    color: white;
+    width: 120px;
+    padding: 5px;
+    border-radius: 5px;
+}
