@@ -33,9 +33,39 @@ function playRound(computerSelection, playerSelection) {
     return "You Lose!"
 };
 
+function addPoint(stringResult) {
+    if (stringResult == "You Win!") {
+        playerScore++
+    } else if (stringResult == "You Lose!") {
+        computerScore++
+    }
+};
+
+function endOfGame() {
+    if (playerScore > computerScore) {
+        return "You win the game!"
+    } else {
+        return "You lost the game!"
+    }
+}; 
+
+function game() {
+    playerScore = 0;
+    computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Choose: Rock, Papers, or Scissors")
+        result = playRound(computerSelection, playerSelection)
+        console.log(result)
+        addPoint(result)
+    };
+    console.log(endOfGame())
+};
+
 
 let computerSelection = getComputerChoice();
-let playerSelection = "rock"
+let playerSelection;
+let playerScore = 0;
+let computerScore = 0;
 
 
 
