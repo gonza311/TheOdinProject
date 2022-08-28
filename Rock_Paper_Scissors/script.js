@@ -15,22 +15,22 @@ function getComputerChoice() {
 
 function playRound(computerSelection, playerSelection) {
     if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") {
-        return "You Win!";
+        return "You win the round";
     } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") {
-        return "You Win!";
+        return "You win the round!";
     } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") {
-        return "You Win!";
+        return "You win the round!";
     } else if (computerSelection == playerSelection.toLowerCase()) {
-        return "Tie!";
+        return "The round is a tie!";
     };
 
-    return "You Lose!";
+    return "You lose the round!";
 };
 
 function addPoint(stringResult) {
-    if (stringResult == "You Win!") {
+    if (stringResult == "You win the round!") {
         playerScore++
-    } else if (stringResult == "You Lose!") {
+    } else if (stringResult == "You lose the round!") {
         computerScore++
     };
 };
@@ -60,16 +60,22 @@ let playerSelection;
 let playerScore;
 let computerScore;
 
+const playerChoice = document.querySelector('.playerChoice')
+const computerChoice = document.querySelector('.computerChoice')
+const roundResult = document.querySelector('.roundResult')
 const choiceButtons = document.querySelectorAll('.selection')
 choiceButtons.forEach(choice => {
     choice.addEventListener('click', () => {
         computerSelection = getComputerChoice();
-        playerSelection = choice.textContent.toLowerCase()
-        console.log(`Computer chose ${computerSelection}`);
-        console.log(`Player chose ${playerSelection}`);
-        console.log(playRound(computerSelection,playerSelection));
+        playerSelection = choice.textContent.toLowerCase();
+        computerChoice.innerHTML = (`Computer chose ${computerSelection}`);
+        playerChoice.innerHTML = (`Player chose ${playerSelection}`);
+        let Result = (playRound(computerSelection,playerSelection));
+        roundResult.innerHTML = Result;
     })
 });
+
+
 
 
 
