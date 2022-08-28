@@ -57,21 +57,31 @@ function game() {
 
 let computerSelection;
 let playerSelection;
-let playerScore;
-let computerScore;
+let playerScore = 0;
+let computerScore = 0;
 
-const playerChoice = document.querySelector('.playerChoice')
-const computerChoice = document.querySelector('.computerChoice')
-const roundResult = document.querySelector('.roundResult')
-const choiceButtons = document.querySelectorAll('.selection')
+const playerChoice = document.querySelector('.playerChoice');
+const computerChoice = document.querySelector('.computerChoice');
+const roundResult = document.querySelector('.roundResult');
+const playerScoreDisplay = document.querySelector('.playerScoreDisplay');
+const computerScoreDisplay = document.querySelector('.computerScoreDisplay');
+playerScoreDisplay.innerHTML = (`Player Score: ${playerScore}`);
+computerScoreDisplay.innerHTML = (`Computer Score: ${computerScore}`);
+
+const choiceButtons = document.querySelectorAll('.selection');
 choiceButtons.forEach(choice => {
     choice.addEventListener('click', () => {
+
         computerSelection = getComputerChoice();
         playerSelection = choice.textContent.toLowerCase();
         computerChoice.innerHTML = (`Computer chose ${computerSelection}`);
         playerChoice.innerHTML = (`Player chose ${playerSelection}`);
+
         let Result = (playRound(computerSelection,playerSelection));
         roundResult.innerHTML = Result;
+
+
+
     })
 });
 
