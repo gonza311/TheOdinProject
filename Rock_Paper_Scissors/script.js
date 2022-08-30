@@ -40,10 +40,10 @@ function addPoint(stringResult) {
 function checkEndOfGame() {
     if (playerScore == 5) {
         endGame = true;
-        return "You win the game!"
+        finalResult.innerHTML = "You won the game!"
     } else if (computerScore == 5) {
         endGame = true;
-        return "You lost the game!";
+        finalResult.innerHTML = "You lost the game!"
     };
 }; 
 
@@ -59,6 +59,7 @@ const computerChoice = document.querySelector('.computerChoice');
 const roundResult = document.querySelector('.roundResult');
 const playerScoreDisplay = document.querySelector('.playerScoreDisplay');
 const computerScoreDisplay = document.querySelector('.computerScoreDisplay');
+const finalResult = document.querySelector('.finalResult')
 playerScoreDisplay.innerHTML = (`Player Score: ${playerScore}`);
 computerScoreDisplay.innerHTML = (`Computer Score: ${computerScore}`);
 
