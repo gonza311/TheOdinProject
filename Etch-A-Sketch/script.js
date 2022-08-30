@@ -15,22 +15,29 @@ function createGrid(dim) {
     }
 };
 
-function deleteGrid() {
-    
-}
-
 createGrid(dimension);
+
+function deleteGrid() {
+    let rows = document.querySelectorAll('.row')
+    rows.forEach(row => {
+        row.remove()
+    })
+}
 
 function addHoveredClass(element) {
     element.classList.add('hovered')
 };
 
-const squares = document.querySelectorAll('.gridSquare')
-squares.forEach(square => {
-    square.addEventListener('mouseover', () => {
-        addHoveredClass(square)
+function addMouse() {
+    let squares = document.querySelectorAll('.gridSquare')
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => {
+            addHoveredClass(square)
+        })
     })
-})
+}
+
+addMouse()
 
 const newGrid = document.querySelector('button')
 newGrid.addEventListener('click', () => {
@@ -39,7 +46,9 @@ newGrid.addEventListener('click', () => {
         let newDim = prompt('Please choose a new grid size. Max = 100')
         if (newDim <= 100) {
             newDimChosen = true;
-            createGrid(newDim)
+            deleteGrid();
+            createGrid(newDim);
+            addMouse()
         } else {
             alert('Please choose a number less that 100')
         }
