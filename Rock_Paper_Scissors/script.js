@@ -33,20 +33,26 @@ function addPoint(stringResult) {
     } else if (stringResult == "You lose the round!") {
         computerScore++
     };
+    playerScoreDisplay.innerHTML = (`Player Score: ${playerScore}`);
+    computerScoreDisplay.innerHTML = (`Computer Score: ${computerScore}`);
 };
 
-function endOfGame() {
-    if (playerScore > computerScore) {
-        return "You win the game!";
-    } else {
+function checkEndOfGame() {
+    if (playerScore == 5) {
+        endGame = true;
+        return "You win the game!"
+    } else if (computerScore == 5) {
+        endGame = true;
         return "You lost the game!";
     };
 }; 
+
 
 let computerSelection;
 let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
+let endGame = false;
 
 const playerChoice = document.querySelector('.playerChoice');
 const computerChoice = document.querySelector('.computerChoice');
@@ -59,19 +65,19 @@ computerScoreDisplay.innerHTML = (`Computer Score: ${computerScore}`);
 const choiceButtons = document.querySelectorAll('.selection');
 choiceButtons.forEach(choice => {
     choice.addEventListener('click', () => {
+        if (endGame != true) {
+            computerSelection = getComputerChoice();
+            playerSelection = choice.textContent.toLowerCase();
+            computerChoice.innerHTML = (`Computer chose ${computerSelection}`);
+            playerChoice.innerHTML = (`Player chose ${playerSelection}`);
 
-        computerSelection = getComputerChoice();
-        playerSelection = choice.textContent.toLowerCase();
-        computerChoice.innerHTML = (`Computer chose ${computerSelection}`);
-        playerChoice.innerHTML = (`Player chose ${playerSelection}`);
+            let Result = (playRound(computerSelection,playerSelection));
+            roundResult.innerHTML = Result;
 
-        let Result = (playRound(computerSelection,playerSelection));
-        roundResult.innerHTML = Result;
+            addPoint(Result);
+            checkEndOfGame()
+        };
 
-        addPoint(Result);
-
-        playerScoreDisplay.innerHTML = (`Player Score: ${playerScore}`);
-        computerScoreDisplay.innerHTML = (`Computer Score: ${computerScore}`);
 
 
     })
