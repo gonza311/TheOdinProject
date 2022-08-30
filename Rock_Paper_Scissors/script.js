@@ -43,18 +43,6 @@ function endOfGame() {
     };
 }; 
 
-function game() {
-    playerScore = 0;
-    computerScore = 0;
-    // for (let i = 0; i < 5; i++) {
-    //     playerSelection = prompt("Choose: Rock, Papers, or Scissors")
-    //     result = playRound(computerSelection, playerSelection)
-    //     console.log(result)
-    //     addPoint(result)
-    // };
-    console.log(endOfGame());
-};
-
 let computerSelection;
 let playerSelection;
 let playerScore = 0;
