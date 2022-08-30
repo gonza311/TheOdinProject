@@ -8,6 +8,7 @@ for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
         let column = document.createElement('div')
         column.classList.add('column')
+        column.classList.add('gridSquare')
         row.appendChild(column)
     }
     divGrid.appendChild(row)
