@@ -32,8 +32,10 @@ function addMouse() {
     let squares = document.querySelectorAll('.gridSquare')
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-            square.style.backgroundColor = '#' + randomColor;
+            // let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            // square.style.backgroundColor = '#' + randomColor;
+            square.style.backgroundColor = "black";
+            square.style.opacity = +square.style.opacity + .1
         })
     })
 }
