@@ -1,15 +1,32 @@
 const divGrid = document.querySelector('.divGrid');
-let height = 16;
-let width = 16;
+let dimension = 16;
 
-for (let i = 0; i < height; i++) {
-    let row = document.createElement('div')
-    row.classList.add('row')
-    for (let j = 0; j < width; j++) {
-        let column = document.createElement('div')
-        column.classList.add('column')
-        column.classList.add('gridSquare')
-        row.appendChild(column)
+
+function createGrid(dim) {
+    for (let i = 0; i < dim; i++) {
+        let row = document.createElement('div')
+        row.classList.add('row')
+        for (let j = 0; j < dim; j++) {
+            let column = document.createElement('div')
+            column.classList.add('column')
+            column.classList.add('gridSquare')
+            row.appendChild(column)
+        }
+        divGrid.appendChild(row)
     }
-    divGrid.appendChild(row)
-}
+};
+
+function addHoveredClass(element) {
+    element.classList.add('hovered')
+};
+
+
+createGrid(dimension);
+
+const squares = document.querySelectorAll('.gridSquare')
+squares.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        addHoveredClass(square)
+    })
+})
+
