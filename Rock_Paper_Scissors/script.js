@@ -15,7 +15,7 @@ function getComputerChoice() {
 
 function playRound(computerSelection, playerSelection) {
     if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") {
-        return "You win the round";
+        return "You win the round!";
     } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") {
         return "You win the round!";
     } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") {
@@ -68,6 +68,10 @@ choiceButtons.forEach(choice => {
         let Result = (playRound(computerSelection,playerSelection));
         roundResult.innerHTML = Result;
 
+        addPoint(Result);
+
+        playerScoreDisplay.innerHTML = (`Player Score: ${playerScore}`);
+        computerScoreDisplay.innerHTML = (`Computer Score: ${computerScore}`);
 
 
     })
